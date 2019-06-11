@@ -8,11 +8,55 @@
   h1 {
     text-shadow: 2px 2px 5px rgb(75,0,130);
   }
+  .heart {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: #af070b;
+  transform: rotate(-45deg);
+  animation: heart 5s infinite;
+}
+
+@keyframes heart {
+    0%   {transform: rotate(-45deg) scale(1);}
+    50%  {
+           transform: rotate(-45deg) scale(1.5);
+           background-color: #7f0306;
+         }
+    100%  {transform: rotate(-45deg) scale(1);}
+}
+
+@keyframes heart-color {
+   50%  {background-color: #7f0306;}
+}
+
+.heart:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  animation: heart-color 5s infinite;
+  background-color: #af070b;
+}
+
+.heart:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  bottom: 50%;
+  position: absolute;
+  animation: heart-color 5s infinite;
+  background-color: #af070b;
+}
+
 </style>
 </head>
 <body>
-  <h1>SITE MANERO</h1>
-  
   <img src="tenor.gif">
+  
+  <div class="heart"></div>
 </body>
 </html>
